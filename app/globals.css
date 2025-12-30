@@ -123,3 +123,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Accessibility and form enhancements */
+.required::after {
+  content: " *";
+  color: oklch(0.577 0.245 27.325); /* destructive color */
+}
+
+/* Focus visible styles for better keyboard navigation */
+:focus-visible {
+  outline: 2px solid oklch(0.704 0.04 256.788);
+  outline-offset: 2px;
+}
+

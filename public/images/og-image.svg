@@ -1,0 +1,7 @@
+﻿<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#18181b"/>
+  <rect x="50" y="50" width="1100" height="530" fill="#27272a" rx="10"/>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#fafafa" text-anchor="middle">Lucas Pazzim</text>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="36" fill="#a1a1aa" text-anchor="middle">Frontend Developer</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="#71717a" text-anchor="middle">React  TypeScript  Next.js</text>
+</svg>

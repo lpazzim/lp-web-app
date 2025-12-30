@@ -1,0 +1,170 @@
+{
+  "header": {
+    "languageSelector": "Language",
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "intro": {
+    "title": "Frontend Developer",
+    "bio": "Frontend Engineer with over 6 years of experience building fast, scalable, and user-friendly web applications. Strong focus on JavaScript, TypeScript, and React.",
+    "skills": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewGitHub": "View on GitHub",
+    "stack": "Stack",
+    "items": [
+      {
+        "id": "project-1",
+        "title": "E-commerce Platform",
+        "description": "A full-featured e-commerce platform with product catalog, cart, and checkout functionality.",
+        "stack": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+        "githubUrl": "https://github.com/lpazzim/project-1"
+      },
+      {
+        "id": "project-2",
+        "title": "Task Management App",
+        "description": "A collaborative task management application with real-time updates and team features.",
+        "stack": ["React", "Redux", "TypeScript", "Firebase", "Material-UI"],
+        "githubUrl": "https://github.com/lpazzim/project-2"
+      },
+      {
+        "id": "project-3",
+        "title": "Weather Dashboard",
+        "description": "An interactive weather dashboard with forecasts, maps, and location-based alerts.",
+        "stack": ["Next.js", "TypeScript", "Chart.js", "OpenWeather API"],
+        "githubUrl": "https://github.com/lpazzim/project-3"
+      },
+      {
+        "id": "project-4",
+        "title": "Portfolio CMS",
+        "description": "A headless CMS for managing portfolio content with drag-and-drop interface.",
+        "stack": ["React", "Node.js", "MongoDB", "Express", "Styled Components"],
+        "githubUrl": "https://github.com/lpazzim/project-4"
+      },
+      {
+        "id": "project-5",
+        "title": "Analytics Platform",
+        "description": "Real-time analytics platform with custom dashboards and data visualization.",
+        "stack": ["React", "TypeScript", "D3.js", "WebSocket", "Redis"],
+        "githubUrl": "https://github.com/lpazzim/project-5"
+      },
+      {
+        "id": "project-6",
+        "title": "Design System",
+        "description": "A comprehensive design system with reusable components and documentation.",
+        "stack": ["React", "TypeScript", "Storybook", "Tailwind CSS", "Radix UI"],
+        "githubUrl": "https://github.com/lpazzim/project-6"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "responsibilities": "Key Responsibilities",
+    "items": [
+      {
+        "company": "10.123 Ventures, Inc",
+        "role": "Senior Frontend Software Engineer",
+        "period": "Nov 2023 – Present",
+        "location": "São Paulo, Brazil",
+        "highlights": [
+          "Led the creation and maintenance of dynamic, user-friendly interfaces",
+          "Focused on frontend performance optimization and best practices",
+          "Ensured consistent UI/UX standards with scalable and maintainable code",
+          "Collaborated closely with design and backend teams",
+          "Built reusable UI components using Styled Components",
+          "Acted as a frontend reference for cross-functional communication"
+        ],
+        "techStack": ["React", "TypeScript", "Styled Components", "Prettier"]
+      },
+      {
+        "company": "Jestor",
+        "role": "Senior Frontend Software Engineer",
+        "period": "Jun 2022 – Aug 2023",
+        "location": "São Paulo, Brazil",
+        "highlights": [
+          "Developed and maintained complex frontend components for a no-code platform",
+          "Improved application performance and developer experience",
+          "Integrated frontend workflows with DevOps using Docker",
+          "Used Vite for fast development and HMR",
+          "Managed dependencies using pnpm"
+        ],
+        "techStack": ["React", "Docker", "Vite", "Prettier", "pnpm"]
+      },
+      {
+        "company": "Zends Soluções Tecnológicas",
+        "role": "Senior Frontend Software Engineer",
+        "period": "Jun 2021 – Jun 2022",
+        "location": "São Paulo, Brazil",
+        "highlights": [
+          "Built React-based applications from business requirements",
+          "Analyzed system and functional requirements",
+          "Developed accessible, standards-compliant interfaces",
+          "Designed and maintained CSS templates and layouts"
+        ],
+        "techStack": ["JavaScript", "TypeScript", "LESS", "SASS", "SCSS", "Bootstrap", "React", "GitLab"]
+      },
+      {
+        "company": "Embracon Administradora de Consórcio",
+        "role": "Senior Frontend Software Engineer",
+        "period": "Jan 2021 – Jun 2021",
+        "location": "Santana de Parnaíba, SP, Brazil",
+        "highlights": [
+          "Developed React applications from requirements to deployment",
+          "Worked on UI consistency and accessibility",
+          "Maintained and extended frontend codebases"
+        ],
+        "techStack": ["JavaScript", "TypeScript", "LESS", "SASS", "SCSS", "Bootstrap", "React", "GitLab"]
+      },
+      {
+        "company": "Webmotors",
+        "role": "Senior Frontend Software Engineer",
+        "period": "Aug 2019 – Jan 2021",
+        "location": "São Paulo, Brazil",
+        "highlights": [
+          "Worked on financial team frontend applications",
+          "Focused on performance, usability, and SEO optimization",
+          "Ensured high Google search ranking through best practices",
+          "Used ESLint and Google Analytics to maintain quality"
+        ],
+        "techStack": ["React", "Next.js", "Redux", "TypeScript", "JavaScript", "SCSS", "HTML", "Bitbucket"]
+      },
+      {
+        "company": "UnitedHealth Group",
+        "role": "Frontend Software Engineer",
+        "period": "Nov 2017 – Aug 2019",
+        "location": "São Paulo, Brazil",
+        "highlights": [
+          "Developed reusable and reliable frontend components",
+          "Contributed to a healthcare product used by hundreds of doctors",
+          "Participated in early-stage product development"
+        ],
+        "techStack": ["React", "Redux", "TypeScript", "JavaScript", "SCSS", "HTML", "GitHub"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "message": "Message",
+    "consent": "I agree to be contacted via email",
+    "submit": "Send Message",
+    "errors": {
+      "invalidEmail": "Please enter a valid email address",
+      "requiredField": "This field is required",
+      "messageLength": "Message must be at least 20 characters",
+      "consentRequired": "You must agree to be contacted"
+    },
+    "success": "Your message has been prepared. Please complete sending via your email client.",
+    "mailtoUnavailable": "Unable to open email client. Please email directly to: lpazzim@gmail.com"
+  },
+  "footer": {
+    "connect": "Connect with me",
+    "rights": "All rights reserved"
+  }
+}
