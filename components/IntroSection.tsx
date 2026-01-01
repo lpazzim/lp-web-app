@@ -76,7 +76,7 @@ export function IntroSection() {
       animateBy="words"
       direction="top"
       onAnimationComplete={handleAnimationComplete}
-      className="text-6xl font-semibold text-white"
+      className="text-4xl md:text-6xl font-semibold text-white"
     />
     {/* <IconCloud images={images} /> */}
   </div>
