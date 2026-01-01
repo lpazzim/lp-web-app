@@ -15,7 +15,7 @@ export function FooterSocial() {
   const socialLinks: SocialLink[] = [
     {
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/lucas-pazzim/',
+      href: 'https://www.linkedin.com/in/lpazzim/',
       icon: <Linkedin className="w-5 h-5" aria-hidden="true" />,
     },
     {
@@ -25,7 +25,7 @@ export function FooterSocial() {
     },
     {
       label: 'Instagram',
-      href: 'https://www.instagram.com/lpazzim/',
+      href: 'https://www.instagram.com/lucaspazzim/',
       icon: <Instagram className="w-5 h-5" aria-hidden="true" />,
     },
   ];
@@ -33,7 +33,7 @@ export function FooterSocial() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-zinc-800 py-8 px-4 sm:px-6 lg:px-8" role="contentinfo">
+    <footer className="border-t border-zinc-800 py-8 px-4 sm:px-6 lg:px-8 fixed bottom-0 w-full bg-black z-1" role="contentinfo">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center space-y-6">
           {/* Social links */}

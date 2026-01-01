@@ -11,9 +11,9 @@ export default function HomePage() {
       <Header />
       <main id="main-content" role="main">
         <IntroSection />
-        <ProjectsGrid />
+        {/* <ProjectsGrid />
         <ExperienceSection />
-        <ContactForm />
+        <ContactForm /> */}
       </main>
       <FooterSocial />
     </div>

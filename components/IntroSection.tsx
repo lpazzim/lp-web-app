@@ -1,7 +1,28 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+import BlurText from './BlurText';
+import DotGrid from './DotGrid';
+const slugs = [
+  "typescript",
+  "javascript",
+  "react",
+  "angular",
+  "html5",
+  "css3",
+  "nextdotjs",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "figma",
+  "vite",
+]
 
 const coreSkills = [
   'React',
@@ -21,57 +42,49 @@ const coreSkills = [
 export function IntroSection() {
   const t = useTranslations('intro');
 
+  const handleAnimationComplete = () => {
+};
+
+  const images = slugs.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+  )
+
   return (
     <section 
-      className="py-16 md:py-24" 
       aria-labelledby="intro-heading"
     >
-      <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          {/* Avatar */}
-          <div className="shrink-0">
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-zinc-800 border-2 border-zinc-700">
-              <Image
-                src="/images/avatar-placeholder.svg"
-                alt="Lucas Pazzim"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
+      <div>
+       <div className="w-full h-[calc(100vh-229px)] relative">
+  <div className="absolute top-0 inset-0 z-0">
+    <DotGrid
+      dotSize={1}
+      gap={15}
+      baseColor="#087ea4"
+      activeColor="#087ea4"
+      proximity={120}
+      shockRadius={250}
+      shockStrength={5}
+      resistance={750}
+      returnDuration={1.5}
+    />
+  </div>
 
-          {/* Content */}
+  <div className="relative z-1 flex flex-col items-center justify-center h-full my-auto">
+    <BlurText
+      text="Lucas Pazzim"
+      delay={150}
+      animateBy="words"
+      direction="top"
+      onAnimationComplete={handleAnimationComplete}
+      className="text-6xl font-semibold text-white"
+    />
+    {/* <IconCloud images={images} /> */}
+  </div>
+
+</div>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">       
           <div className="flex-1">
-            <h1 
-              id="intro-heading"
-              className="text-4xl md:text-5xl font-bold text-zinc-50 mb-2"
-            >
-              Lucas Pazzim
-            </h1>
-            <h2 className="text-xl md:text-2xl text-zinc-300 mb-6">
-              {t('title')}
-            </h2>
-            <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
-              {t('bio')}
-            </p>
-
-            {/* Skills */}
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
-                {t('skills')}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {coreSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-sm bg-zinc-800 text-zinc-300 rounded-md border border-zinc-700 hover:border-zinc-600 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
