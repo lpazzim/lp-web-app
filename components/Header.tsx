@@ -1,57 +1,85 @@
-'use client';
+"use client"
 
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useLocale, useTranslations } from "next-intl"
+
+import { HyperText } from "./ui/hyper-text"
+import { cn } from "@/lib/utils"
+
+type NavItem = {
+  key: "home" | "about" | "blog"
+  href: string
+}
+
+const NAV: NavItem[] = [
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "blog", href: "/blog" },
+]
+
+function stripLocale(pathname: string, locale: string) {
+  // remove "/pt" ou "/en" do começo
+  const prefix = `/${locale}`
+  if (pathname === prefix) return "/"
+  if (pathname.startsWith(prefix + "/")) return pathname.slice(prefix.length)
+  return pathname
+}
+
+function isActivePath(current: string, href: string) {
+  if (href === "/") return current === "/"
+  return current === href || current.startsWith(href + "/")
+}
 
 export function Header() {
-  const t = useTranslations('header');
+  const t = useTranslations("header")
+  const pathname = usePathname()
+  const locale = useLocale()
+
+  const normalizedPath = stripLocale(pathname, locale)
 
   return (
-    <>
-      {/* Skip to main content link for accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:px-4 focus:py-2 focus:bg-white dark:focus:bg-zinc-900 focus:text-zinc-900 dark:focus:text-zinc-100 focus:rounded focus:ring-2 focus:ring-zinc-400"
-      >
-        Skip to main content
-      </a>
-      
-      <header className="sticky top-0 z-50 w-full  dark:border-zinc-800 bg-transparent dark:bg-transparent backdrop-blur supports-backdrop-filter:bgtransparent dark:supports-backdrop-filter:bg-black/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* <nav className="flex items-center gap-6" aria-label="Main navigation">
-            <Link 
-              href="/" 
-              className="text-xl font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 rounded"
-            >
-              LP
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-4">
-              <Link 
-                href="#projects"
-                className="text-sm font-medium text-white dark:text-white hover:white/80 dark:hover:white/80 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 rounded px-2 py-1"
-              >
-                {t('projects')}
-              </Link>
-              <Link 
-                href="#experience"
-                className="text-sm font-medium text-white dark:text-white hover:white/80 dark:hover:white/80 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 rounded px-2 py-1"
-              >
-                {t('experience')}
-              </Link>
-              <Link 
-                href="#contact"
-                className="text-sm font-medium text-white dark:text-white hover:white/80 dark:hover:white/80 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 rounded px-2 py-1"
-              >
-                {t('contact')}
-              </Link>
-            </div>
-          </nav> */}
+    <header className="sticky top-0 z-10 w-full dark:border-zinc-800 bg-transparent dark:bg-transparent backdrop-blur supports-backdrop-filter:bg-transparent dark:supports-backdrop-filter:bg-black/60">
+      <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
+        <nav className="flex items-center gap-6 w-full" aria-label="Main navigation">
+          <div className="md:flex items-center gap-4 h-full w-full justify-between md:justify-start">
+            {NAV.map((item) => {
+              const active = isActivePath(normalizedPath, item.href)
 
-          {/* <LanguageSwitcher /> */}
-        </div>
-      </header>
-    </>
-  );
+              return (
+               <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative inline-flex items-center px-1",
+                    active && "text-white  text-shadow-md text-shadow-[#087ea4]"
+                  )}
+                >
+                  {active && (
+                    <>
+                      <span className="pointer-events-none absolute left-0 top-0 h-1 w-1 border-l-2 border-t-2  border-[#087ea4]" />
+                      <span className="pointer-events-none absolute right-0 top-0 h-1 w-1 border-r-2 border-t-2 border-[#087ea4]" />
+                      <span className="pointer-events-none absolute left-0 bottom-0 h-1 w-1 border-l-2 border-b-2 border-[#087ea4]" />
+                      <span className="pointer-events-none absolute right-0 bottom-0 h-1 w-1 border-r-2 border-b-2 border-[#087ea4]" />
+                    </>
+                  )}
+
+                  <HyperText
+                    animateOnHover={!active}
+                    className={cn(
+                      "relative block leading-none text-sm font-medium text-white transition-colors py-0 px-1",
+                      "hover:text-white/80 "
+                    )}
+                  >
+                    {item.key}
+                  </HyperText>
+                </Link>
+              )
+            })}
+          </div>
+        </nav>
+      </div>
+    </header>
+  )
 }

@@ -4,7 +4,9 @@
     "home": "Home",
     "projects": "Projects",
     "experience": "Experience",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog",
+    "about": "About"
   },
   "intro": {
     "title": "Frontend Developer",
