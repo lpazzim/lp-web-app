@@ -42,10 +42,9 @@ export function Header() {
     <header className="sticky top-0 z-10 w-full dark:border-zinc-800 bg-transparent dark:bg-transparent backdrop-blur supports-backdrop-filter:bg-transparent dark:supports-backdrop-filter:bg-black/60">
       <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-6 w-full" aria-label="Main navigation">
-          <div className="md:flex items-center gap-4 h-full w-full justify-between md:justify-start">
+          <div className="flex items-center gap-4 h-full w-full justify-between md:justify-start">
             {NAV.map((item) => {
               const active = isActivePath(normalizedPath, item.href)
-
               return (
                <Link
                   key={item.href}
