@@ -12,57 +12,53 @@ export default function AboutPage(){
     const t = useTranslations('intro');
 
      const socialLinks: SocialLink[] = [
-       {
-      label: 'Email',
-      href: 'lpazzim@gmail.com',
-      icon: <Mail className="w-5 h-5" aria-hidden="true" />,
-    },
-    {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/lpazzim/',
-      icon: <Linkedin className="w-5 h-5" aria-hidden="true" />,
-    },
-    {
-      label: 'GitHub',
-      href: 'https://github.com/lpazzim',
-      icon: <Github className="w-5 h-5" aria-hidden="true" />,
-    },
-    {
-      label: 'Instagram',
-      href: 'https://www.instagram.com/lucaspazzim/',
-      icon: <Instagram className="w-5 h-5" aria-hidden="true" />,
-    },
-  ];
+        {
+          label: 'Email',
+          href: 'lpazzim@gmail.com',
+          icon: <Mail className="w-5 h-5" aria-hidden="true" />,
+        },
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/lpazzim/',
+          icon: <Linkedin className="w-5 h-5" aria-hidden="true" />,
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/lpazzim',
+          icon: <Github className="w-5 h-5" aria-hidden="true" />,
+        },
+        {
+          label: 'Instagram',
+          href: 'https://www.instagram.com/lucaspazzim/',
+          icon: <Instagram className="w-5 h-5" aria-hidden="true" />,
+        },
+     ];
 
+      const displayHref = (href: string) => {
+        const value = href.replace(/^mailto:/, "").trim();
+        if (value.includes("@") && !value.startsWith("http")) return value.toLowerCase();
+        try {
+          const url = new URL(value);
+          return (url.pathname && url.pathname !== "/" ? url.pathname : url.host).replace(/\/$/, "");
+        } catch {
+          return value.replace(/^https?:\/\//, "").replace(/\/$/, "");
+        }
+      };
 
-
-const displayHref = (href: string) => {
-  const value = href.replace(/^mailto:/, "").trim();
-  if (value.includes("@") && !value.startsWith("http")) return value.toLowerCase();
-  try {
-    const url = new URL(value);
-    return (url.pathname && url.pathname !== "/" ? url.pathname : url.host).replace(/\/$/, "");
-  } catch {
-    return value.replace(/^https?:\/\//, "").replace(/\/$/, "");
-  }
-};
-
-const toAnchorHref = (href: string) => {
-  const value = href.trim();
-  if (value.includes("@") && !value.startsWith("http") && !value.startsWith("mailto:")) {
-    return `mailto:${value}`;
-  }
-  return value;
-};
-
-
+      const toAnchorHref = (href: string) => {
+        const value = href.trim();
+        if (value.includes("@") && !value.startsWith("http") && !value.startsWith("mailto:")) {
+          return `mailto:${value}`;
+        }
+        return value;
+      };
 
     return(
         <section aria-labelledby="about-heading">
           <div className="px-16 w-full flex md:h-[calc(100vh-100px)] flex-col-reverse md:flex-row justify-between">           
             <div className="container flex flex-col place-content-between w-full h-full mx-auto">
                 <h1 id="about-heading" className="text-white text-6xl md:text-8xl font-bold pb-8 md:pb-0">About</h1>
-                <div className="container space-y-6">
+                <div className="container space-y-6 pb-20">
                   <p className="text-white text-xl ">
                     {t('bio1')}
                   </p>
@@ -107,15 +103,7 @@ const toAnchorHref = (href: string) => {
                   </p>
                 </div>
               </div>
-              
-              {/* <Image
-                className="rounded-sm"
-                src="/images/lucas-pazzim-about.jpeg"
-                alt="About Banner"
-                width={400}
-                height={600}
-                priority
-              /> */}
+         
                 <div className="w-full flex md:justify-end">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 md:max-w-100 pt-6 pb-12 ">
                     {socialLinks.map((item) => (
