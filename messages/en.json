@@ -10,7 +10,9 @@
   },
   "intro": {
     "title": "Frontend Developer",
-    "bio": "I'm a Frontend Engineer with over six years of experience building fast, user-friendly applications with a focus on JavaScript, TypeScript, and, especially, React. I’m passionate about creating responsive and accessible interfaces and always aim to write clean, efficient code that stands up to high-performance demands. Over the years, I’ve worked closely with designers, product managers, and backend teams, helping to scale complex applications and deliver a seamless user experience. With a strong foundation in tools and frameworks like Redux, Next.js, SCSS, and Styled Components, I’m well-equipped to build web solutions that are not only scalable and efficient but also visually engaging and easy to use.",
+    "bio1": "I'm a Frontend Engineer with over six years of experience building fast, user-friendly applications with a focus on JavaScript, TypeScript, and, especially, React.",
+    "bio2": "I’m passionate about creating responsive and accessible interfaces and always aim to write clean, efficient code that stands up to high-performance demands. Over the years, I’ve worked closely with designers, product managers, and backend teams, helping to scale complex applications and deliver a seamless user experience.",
+    "bio3": "With a strong foundation in tools and frameworks like Redux, Next.js, SCSS, and Styled Components, I’m well-equipped to build web solutions that are not only scalable and efficient but also visually engaging and easy to use.",
     "skills": "Skills"
   },
   "projects": {
