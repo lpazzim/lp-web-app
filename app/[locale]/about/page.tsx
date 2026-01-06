@@ -116,8 +116,8 @@ const toAnchorHref = (href: string) => {
                 height={600}
                 priority
               /> */}
-                <div className="w-full">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10">
+                <div className="w-full flex md:justify-end">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 md:max-w-100 pt-6 pb-12 ">
                     {socialLinks.map((item) => (
                       <a
                         key={item.label}
