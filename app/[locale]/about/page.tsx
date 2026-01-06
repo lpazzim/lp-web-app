@@ -123,7 +123,7 @@ export default function AboutPage(){
                               <span className="text-white/70 transition-transform group-hover:translate-x-0.5">↗</span>
                             </div>
 
-                            <div className="mt-1 text-xs uppercase tracking-[0.22em] text-white/50 truncate">
+                            <div className="mt-1 text-xs uppercase tracking-[0.05em] text-white/50 truncate">
                               {displayHref(item.href)}
                             </div>
                           </div>
