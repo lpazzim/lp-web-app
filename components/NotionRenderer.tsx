@@ -260,7 +260,7 @@ export function NotionRenderer({ blocks }: { blocks: any[] }) {
   return (
     <div
       className="
-        notion prose prose-invert max-w-full w-full break-words overflow-x-hidden
+        notion prose prose-invert max-w-full w-full wrap-break-word overflow-x-hidden
         prose-sm sm:prose-base
         prose-pre:whitespace-pre-wrap prose-pre:break-words
         prose-img:rounded-lg prose-img:max-w-full

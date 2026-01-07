@@ -115,7 +115,6 @@ export function listAllPublishedPosts() {
 /** Implementação crua (sem cache) */
 const _getPostBySlug = async (slug: string) => {
 
-  console.log("Fetching post by slug:", slug);
   const res: any = await notion.dataSources.query({
     data_source_id: DATA_SOURCE_ID,
     filter: {

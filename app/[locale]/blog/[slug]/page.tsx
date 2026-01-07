@@ -10,15 +10,15 @@ import { notFound } from "next/navigation";
 type Props = { params: { slug: string } };
 
 export default async function BlogPostPage({ params }: Props): Promise<any> {
-  
-    
-  const data = await getPostBySlug(params.slug);
+
+   const { slug } = await params
+  const data = await getPostBySlug(slug);
   if (!data) notFound();
 
   const blocks = await getBlocks(data.pageId);
 
   return (
-    <main className="py-10 bg-[#171c24]">
+    <main className="py-10">
       <div className="grid gap-10 md:grid-cols-1 px-6 md:px-0">
         {/* Conteúdo do post */}
         <article className="mx-auto max-w-3xl text-white">
