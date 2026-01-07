@@ -55,7 +55,7 @@ export default function AboutPage(){
 
     return(
         <section aria-labelledby="about-heading">
-          <div className="px-16 w-full flex md:h-[calc(100vh-100px)] flex-col-reverse md:flex-row justify-between">           
+          <div className="px-16 w-full flex md:h-[calc(100vh-100px)] flex-col-reverse md:flex-row justify-between gap-6">           
             <div className="container flex flex-col place-content-between w-full h-full mx-auto">
                 <h1 id="about-heading" className="text-white text-6xl md:text-8xl font-bold pb-8 md:pb-0">About</h1>
                 <div className="container space-y-6 pb-20">
