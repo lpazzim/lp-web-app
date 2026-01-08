@@ -1,0 +1,35 @@
+/* styles/prose.css */
+
+/* Nunca ultrapassar a viewport */
+.notion { max-width: 100%; overflow-x: hidden; }
+
+/* Todos os descendentes podem encolher */
+.notion * { box-sizing: border-box; min-width: 0; }
+
+/* Quebra de linha agressiva onde necessário */
+.notion :where(p,h1,h2,h3,h4,h5,h6,li,blockquote,code,pre,a) {
+  overflow-wrap: anywhere; /* >= Chrome 90 / iOS 14.5 */
+  word-break: break-word;
+}
+
+/* Imagens/iframes/tabelas responsivos */
+.notion img,
+.notion video,
+.notion iframe { max-width: 100%; height: auto; display: block; }
+
+.notion table { width: 100%; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.notion table > * { min-width: max-content; } /* evita colunas esmagadas */
+
+/* Código: nunca vaza da tela */
+.notion pre { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.notion code { white-space: pre-wrap; }
+
+/* Lists: recuo mais curto no mobile */
+@media (max-width: 640px) {
+  .notion ul, .notion ol { padding-left: 1.25rem; }
+}
+
+/* Callout/Bookmark nunca passam da largura */
+.notion [data-notion-type="callout"],
+.notion .bookmark,
+.notion figure { max-width: 100%; }
