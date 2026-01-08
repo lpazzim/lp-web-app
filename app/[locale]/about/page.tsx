@@ -1,6 +1,6 @@
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 export interface SocialLink {
   label: string;

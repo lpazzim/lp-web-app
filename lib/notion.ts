@@ -19,15 +19,33 @@ type AnyProp = any;
 /** Extrai texto de propriedades comuns do Notion */
 function textFrom(prop: AnyProp): string | undefined {
   if (!prop) return undefined;
+
   switch (prop.type) {
     case "title":
       return (prop.title ?? []).map((t: any) => t.plain_text).join("") || undefined;
+
     case "rich_text":
       return (prop.rich_text ?? []).map((t: any) => t.plain_text).join("") || undefined;
+
     case "date":
       return prop.date?.start;
+
     case "url":
       return prop.url || undefined;
+
+    case "people": {
+      const names = (prop.people ?? [])
+        .map((u: any) => u?.name)
+        .filter(Boolean);
+      return names.length ? names.join(", ") : undefined;
+    }
+
+    case "created_by":
+      return prop.created_by?.name || undefined;
+
+    case "last_edited_by":
+      return prop.last_edited_by?.name || undefined;
+
     default:
       return undefined;
   }
@@ -42,6 +60,7 @@ export type NotionPostMeta = {
   date?: string;
   canonical?: string;
   image?: string;
+  author?: string;
 };
 
 /** Mapeia uma página do Notion para NotionPostMeta */
@@ -55,6 +74,7 @@ function mapPageToMeta(page: any): NotionPostMeta {
     date: textFrom(p.Date),
     canonical: textFrom(p.Canonical),
     image: textFrom(p.Image),
+    author: textFrom(p.Author),
   };
 }
 
@@ -70,6 +90,7 @@ const _listLatestPosts = async (limit = 10) => {
     sorts: [{ property: "Date", direction: "descending" }],
     page_size: limit,
   } as any);
+
   return (res.results as any[]).map(mapPageToMeta);
 };
 
@@ -114,7 +135,6 @@ export function listAllPublishedPosts() {
 
 /** Implementação crua (sem cache) */
 const _getPostBySlug = async (slug: string) => {
-
   const res: any = await notion.dataSources.query({
     data_source_id: DATA_SOURCE_ID,
     filter: {
@@ -152,6 +172,7 @@ const _getBlocks = async (blockId: string): Promise<any[]> => {
       page_size: 100,
       start_cursor: cursor,
     } as any);
+
     blocks.push(...(res.results as any[]));
     cursor = res.next_cursor ?? undefined;
   } while (cursor);
