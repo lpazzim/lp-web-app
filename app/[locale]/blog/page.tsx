@@ -6,6 +6,7 @@ import PostsList from "@/components/PostsList";
 import "@/styles/prose.css";
 
 export default async function BlogIndexPage() {
+  
   return (
     <main className="mx-auto py-10">
       <div className="grid gap-10 md:grid-cols-1">
