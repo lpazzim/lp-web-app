@@ -1,11 +1,3 @@
-**User:**
-
-Explain the project and create a readme.md for this project
-
----
-
-**Assistant:**
-
 # LP Web App
 
 A modern, multilingual personal landing page built with **Next.js 16 (App Router)**, featuring dynamic content from Notion, smooth animations, and full testing suite.
